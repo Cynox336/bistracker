@@ -53,6 +53,7 @@ const data = [
     {loot: 0, dungeon: 'Grim Batol', slot: 'Weapon 1', name: 'Martillo salvaje', player: 'Gaston', ID: 133298},
     {loot: 0, dungeon: 'Craft', slot: 'Weapon 2', name: 'Manndoble cargado', player: 'Gaston', ID: 222447},
 ];
+// subete cabron
 
 window.onload = function() {
     loadData();
