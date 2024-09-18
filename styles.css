@@ -14,6 +14,9 @@
     border-color: #333;
 }
 
+.warrior-color {
+    background-color: #C69B6D !important;
+}
 .deathknight-color {
     background-color: #C41F3B !important;
 }
@@ -26,6 +29,9 @@
 }
 .hunter-color {
     background-color: #ABD473 !important;
+}
+.mage-color {
+    background-color: #3FC7EB !important;
 }
 
 input[type="checkbox"] {
@@ -51,26 +57,15 @@ input[type="checkbox"]:checked {
     margin-right: 10px;
 }
 
-.druid-color {
-    background-color: #FF7D0A;
-}
-
-.hunter-color {
-    background-color: #ABD473;
-}
-
-.priest-color {
-    background-color: #FFFFFF;
-}
-
-.deathknight-color {
-    background-color: #C41F3B;
+.card-header {
+    display: flex;
+    align-items: center;
 }
 
 .card-header img {
-    float: left;
     margin-right: 10px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
+
