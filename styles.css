@@ -1,9 +1,11 @@
 .bg-dark {
     background-color: #171717 !important;
 }
+
 .text-primary {
     color: #51EA5A !important;
 }
+
 .text-green {
     color: #51EA5A;
 }
@@ -17,21 +19,30 @@
 .warrior-color {
     background-color: #C69B6D !important;
 }
+
 .deathknight-color {
     background-color: #C41F3B !important;
 }
+
 .druid-color {
     background-color: #FF7D0A !important;
 }
+
 .priest-color {
     background-color: #FFFFFF !important;
     color: #171717 !important;
 }
+
 .hunter-color {
     background-color: #ABD473 !important;
 }
+
 .mage-color {
     background-color: #3FC7EB !important;
+}
+
+.paladin-color{
+    background-color: #F48CBA !important;
 }
 
 input[type="checkbox"] {
@@ -41,6 +52,7 @@ input[type="checkbox"] {
     height: 20px;
     cursor: pointer;
 }
+
 input[type="checkbox"]:checked {
     background-color: #51EA5A;
 }
@@ -49,6 +61,7 @@ input[type="checkbox"]:checked {
     color: #51EA5A;
     text-decoration: none;
 }
+
 [data-wowhead]:hover {
     color: #FFFFFF;
 }
@@ -69,3 +82,36 @@ input[type="checkbox"]:checked {
     border-radius: 50%;
 }
 
+.card-custom-bg {
+    background-color: #1C1C1C;
+}
+
+/* Nuevas clases añadidas */
+.link-raid {
+    color: #a335ee;
+}
+
+.link-craft {
+    color: #007bff;
+}
+
+.link-tier-catalyst {
+    color: #ff851b;
+}
+
+.mage-text-color {
+    color: #3FC7EB;
+}
+
+.warrior-text-color {
+    color: #C69B6D;
+}
+.paladin-text-color {
+    color: #F48CBA;
+}
+
+.dungeon-span {
+    font-style: italic;
+    float: right;
+    color: white;
+}

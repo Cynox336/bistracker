@@ -1,59 +1,58 @@
 const data = [
     // Cynox
-    {loot: 0, dungeon: 'Estela Necrótica', slot: 'Head', name: 'Yelmo de escarcha oscura', player: 'Nopienso', ID: 178777},
-    {loot: 0, dungeon: 'Nieblas de Tirna Scithe', slot: 'Neck', name: 'Llavero de "parada de emergencia"', player: 'Nopienso', ID: 221077},
-    {loot: 0, dungeon: 'Tier', slot: 'Shoulder', name: 'Espaldares astados de escultor de guerra', player: 'Nopienso', ID: 211982},
-    {loot: 0, dungeon: 'La Petrocámara', slot: 'Cloak', name: 'Manteo yunquepiel', player: 'Nopienso', ID: 221088},
-    {loot: 0, dungeon: 'Tier', slot: 'Chest', name: 'Pechera de piel de escultor de guerra', player: 'Nopienso', ID: 211987},
-    {loot: 0, dungeon: 'Craft', slot: 'Wrist', name: 'Avambrazos de forja eterna', player: 'Nopienso', ID: 222435},
-    {loot: 0, dungeon: 'Tier', slot: 'Hands', name: 'Trituradores de escultor de guerra', player: 'Nopienso', ID: 211985},
-    {loot: 0, dungeon: 'El Rompealbas', slot: 'Belt', name: 'Faja de ardides sombríos', player: 'Nopienso', ID: 221133},
-    {loot: 0, dungeon: 'Tier', slot: 'Legs', name: 'Quijotes de escultor de guerra', player: 'Nopienso', ID: 211983},
-    {loot: 0, dungeon: 'Asedio de Boralus', slot: 'Boots', name: 'Botas del baluarte negro', player: 'Nopienso', ID: 159428},
-    {loot: 1, dungeon: 'Raid - Reina Ansurek', slot: 'Ring 1', name: 'Sello del pacto envenenado', player: 'Nopienso', ID: 225578},
-    {loot: 0, dungeon: "Raid - Tuercelinajes Ovi'nax", slot: 'Ring 2', name: 'Gusanillo avieso', player: 'Nopienso', ID: 225576},
-    {loot: 0, dungeon: 'Ara-Kara', slot: 'Trinket 1', name: 'Saco eclosionador de Ara-Kara', player: 'Nopienso', ID: 219314},
-    {loot: 0, dungeon: "Raid - Princesa del Nexo Ky'veza", slot: 'Trinket 2', name: 'Transmisor traicionero', player: 'Nopienso', ID: 221023},
-    {loot: 0, dungeon: 'Grim Batol', slot: 'Weapon 1', name: 'Martillo salvaje', player: 'Nopienso', ID: 133298},
-    {loot: 0, dungeon: 'Craft', slot: 'Weapon 2', name: 'Manndoble cargado', player: 'Nopienso', ID: 222447},
+    {loot: 0, type: "dungeon", dungeon: 'Estela Necrótica', slot: 'Head', name: 'Yelmo de escarcha oscura', player: 'Nopienso', class: 'Warrior', ID: 178777},
+    {loot: 0, type: "dungeon", dungeon: 'Nieblas de Tirna Scithe', slot: 'Neck', name: 'Llavero de "parada de emergencia"', player: 'Nopienso', class: 'Warrior', ID: 221077},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Shoulder', name: 'Espaldares astados de escultor de guerra', player: 'Nopienso', class: 'Warrior', ID: 211982},
+    {loot: 0, type: "dungeon", dungeon: 'La Petrocámara', slot: 'Cloak', name: 'Manteo yunquepiel', player: 'Nopienso', class: 'Warrior', ID: 221088},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Chest', name: 'Pechera de piel de escultor de guerra', player: 'Nopienso', class: 'Warrior', ID: 211987},
+    {loot: 0, type: "craft", dungeon: 'Craft', slot: 'Wrist', name: 'Avambrazos de forja eterna', player: 'Nopienso', class: 'Warrior', ID: 222435},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Hands', name: 'Trituradores de escultor de guerra', player: 'Nopienso', class: 'Warrior', ID: 211985},
+    {loot: 0, type: "dungeon", dungeon: 'El Rompealbas', slot: 'Belt', name: 'Faja de ardides sombríos', player: 'Nopienso', class: 'Warrior', ID: 221133},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Legs', name: 'Quijotes de escultor de guerra', player: 'Nopienso', class: 'Warrior', ID: 211983},
+    {loot: 0, type: "dungeon", dungeon: 'Asedio de Boralus', slot: 'Boots', name: 'Botas del baluarte negro', player: 'Nopienso', class: 'Warrior', ID: 159428},
+    {loot: 1, type: "raid", dungeon: 'Raid - Reina Ansurek', slot: 'Ring 1', name: 'Sello del pacto envenenado', player: 'Nopienso', class: 'Warrior', ID: 225578},
+    {loot: 0, type: "raid", dungeon: "Raid - Tuercelinajes Ovi'nax", slot: 'Ring 2', name: 'Gusanillo avieso', player: 'Nopienso', class: 'Warrior', ID: 225576},
+    {loot: 0, type: "dungeon", dungeon: 'Ara-Kara', slot: 'Trinket 1', name: 'Saco eclosionador de Ara-Kara', player: 'Nopienso', class: 'Warrior', ID: 219314},
+    {loot: 0, type: "raid", dungeon: "Raid - Princesa del Nexo Ky'veza", slot: 'Trinket 2', name: 'Transmisor traicionero', player: 'Nopienso', class: 'Warrior', ID: 221023},
+    {loot: 0, type: "dungeon", dungeon: 'Grim Batol', slot: 'Weapon 1', name: 'Martillo salvaje', player: 'Nopienso', class: 'Warrior', ID: 133298},
+    {loot: 0, type: "craft", dungeon: 'Craft', slot: 'Weapon 2', name: 'Manndoble cargado', player: 'Nopienso', class: 'Warrior', ID: 222447},
 
     // Goi
-    {loot: 0, dungeon: 'Nieblas de Tirna Scithe', slot: 'Head', name: 'Capucha de seda de crisálida', player: 'Mângo', ID: 178693},
-    {loot: 0, dungeon: 'Raid - Sikran', slot: 'Neck', name: 'Insignia de zelote sureki', player: 'Mângo', ID: 225577},
-    {loot: 0, dungeon: 'Tier', slot: 'Shoulder', name: 'Balizas de renacer violeta', player: 'Mângo', ID: 212090},
-    {loot: 0, dungeon: 'Catalyst', slot: 'Cloak', name: 'Resguardo de renacer violeta', player: 'Mângo', ID: 212087},
-    {loot: 0, dungeon: 'Tier', slot: 'Chest', name: 'Abrigo rúnico de renacer violeta', player: 'Mângo', ID: 212095},
-    {loot: 0, dungeon: 'Craft', slot: 'Wrist', name: 'Puños consagrados', player: 'Mângo', ID: 222815},
-    {loot: 0, dungeon: 'Tier', slot: 'Hands', name: 'Guanteletes con joyas de renacer violeta', player: 'Mângo', ID: 212093},
-    {loot: 0, dungeon: 'Raid - Reina Ansurek', slot: 'Belt', name: 'Fajín de ascendiente mordaz', player: 'Mângo', ID: 225585},
-    {loot: 0, dungeon: 'Tier', slot: 'Legs', name: 'Cubrecolas de renacer violeta', player: 'Mângo', ID: 212091},
-    {loot: 0, dungeon: 'Catalyst', slot: 'Boots', name: 'Zapatillas de renacer violeta', player: 'Mângo', ID: 212094},
-    {loot: 0, dungeon: 'Raid - Reina Ansurek', slot: 'Ring 1', name: 'Sello del pacto envenenado', player: 'Mângo', ID: 225578},
-    {loot: 0, dungeon: "Raid - Tuercelinajes Ovi'nax", slot: 'Ring 2', name: 'Gusanillo avieso', player: 'Mângo', ID: 225576},
-    {loot: 0, dungeon: "Raid - Anub'arash", slot: 'Trinket 1', name: 'Red de maestro de espías', player: 'Mângo', ID: 220202},
-    {loot: 0, dungeon: 'Ara-Kara', slot: 'Trinket 2', name: 'Saco eclosionador de Ara-Kara', player: 'Mângo', ID: 219314},
-    {loot: 0, dungeon: 'Raid - Reina Ansurek', slot: 'Weapon 1', name: 'Desdén de la soberana', player: 'Mângo', ID: 212394},
-    {loot: 0, dungeon: 'Craft', slot: 'Weapon 2', name: 'Antorcha de vagabundo', player: 'Mângo', ID: 212394},
+    {loot: 0, type: "dungeon", dungeon: 'Nieblas de Tirna Scithe', slot: 'Head', name: 'Capucha de seda de crisálida', player: 'Mângo', class: 'Mage', ID: 178693},
+    {loot: 0, type: "dungeon", dungeon: 'Raid - Sikran', slot: 'Neck', name: 'Insignia de zelote sureki', player: 'Mângo', class: 'Mage', ID: 225577},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Shoulder', name: 'Balizas de renacer violeta', player: 'Mângo', class: 'Mage', ID: 212090},
+    {loot: 0, type: "catalyst", dungeon: 'Catalyst', slot: 'Cloak', name: 'Resguardo de renacer violeta', player: 'Mângo', class: 'Mage', ID: 212087},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Chest', name: 'Abrigo rúnico de renacer violeta', player: 'Mângo', class: 'Mage', ID: 212095},
+    {loot: 0, type: "craft", dungeon: 'Craft', slot: 'Wrist', name: 'Puños consagrados', player: 'Mângo', class: 'Mage', ID: 222815},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Hands', name: 'Guanteletes con joyas de renacer violeta', player: 'Mângo', class: 'Mage', ID: 212093},
+    {loot: 0, type: "raid", dungeon: 'Raid - Reina Ansurek', slot: 'Belt', name: 'Fajín de ascendiente mordaz', player: 'Mângo', class: 'Mage', ID: 225585},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Legs', name: 'Cubrecolas de renacer violeta', player: 'Mângo', class: 'Mage', ID: 212091},
+    {loot: 0, type: "catalyst", dungeon: 'Catalyst', slot: 'Boots', name: 'Zapatillas de renacer violeta', player: 'Mângo', class: 'Mage', ID: 212094},
+    {loot: 0, type: "raid", dungeon: 'Raid - Reina Ansurek', slot: 'Ring 1', name: 'Sello del pacto envenenado', player: 'Mângo', class: 'Mage', ID: 225578},
+    {loot: 0, type: "raid", dungeon: "Raid - Tuercelinajes Ovi'nax", slot: 'Ring 2', name: 'Gusanillo avieso', player: 'Mângo', class: 'Mage', ID: 225576},
+    {loot: 0, type: "raid", dungeon: "Raid - Anub'arash", slot: 'Trinket 1', name: 'Red de maestro de espías', player: 'Mângo', class: 'Mage', ID: 220202},
+    {loot: 0, type: "dungeon", dungeon: 'Ara-Kara', slot: 'Trinket 2', name: 'Saco eclosionador de Ara-Kara', player: 'Mângo', class: 'Mage', ID: 219314},
+    {loot: 0, type: "raid", dungeon: 'Raid - Reina Ansurek', slot: 'Weapon 1', name: 'Desdén de la soberana', player: 'Mângo', class: 'Mage', ID: 212394},
+    {loot: 0, type: "craft", dungeon: 'Craft', slot: 'Weapon 2', name: 'Antorcha de vagabundo', player: 'Mângo', class: 'Mage', ID: 212394},
 
     // Katashi
-    {loot: 0, dungeon: 'Estela Necrótica', slot: 'Head', name: 'Yelmo de escarcha oscura', player: 'Gaston', ID: 178777},
-    {loot: 0, dungeon: 'Nieblas de Tirna Scithe', slot: 'Neck', name: 'Llavero de "parada de emergencia"', player: 'Gaston', ID: 221077},
-    {loot: 0, dungeon: 'La Petrocámara', slot: 'Cloak', name: 'Manteo yunquepiel', player: 'Gaston', ID: 221088},
-    {loot: 0, dungeon: 'Tier', slot: 'Shoulder', name: 'Espaldares astados de escultor de guerra', player: 'Gaston', ID: 211982},
-    {loot: 0, dungeon: 'Tier', slot: 'Chest', name: 'Pechera de piel de escultor de guerra', player: 'Gaston', ID: 211987},
-    {loot: 0, dungeon: 'Craft', slot: 'Wrist', name: 'Avambrazos de forja eterna', player: 'Gaston', ID: 222435},
-    {loot: 0, dungeon: 'Tier', slot: 'Hands', name: 'Trituradores de escultor de guerra', player: 'Gaston', ID: 211985},
-    {loot: 0, dungeon: 'El Rompealbas', slot: 'Belt', name: 'Faja de ardides sombríos', player: 'Gaston', ID: 221133},
-    {loot: 0, dungeon: 'Tier', slot: 'Legs', name: 'Quijotes de escultor de guerra', player: 'Gaston', ID: 211983},
-    {loot: 0, dungeon: 'Asedio de Boralus', slot: 'Boots', name: 'Botas del baluarte negro', player: 'Gaston', ID: 159428},
-    {loot: 0, dungeon: 'Raid - Reina Ansurek', slot: 'Ring 1', name: 'Sello del pacto envenenado', player: 'Gaston', ID: 225578},
-    {loot: 0, dungeon: "Raid - Tuercelinajes Ovi'nax", slot: 'Ring 2', name: 'Gusanillo avieso', player: 'Gaston', ID: 225576},
-    {loot: 0, dungeon: 'Ara-Kara', slot: 'Trinket 1', name: 'Saco eclosionador de Ara-Kara', player: 'Gaston', ID: 219314},
-    {loot: 0, dungeon: "Raid - Princesa del Nexo Ky'veza", slot: 'Trinket 2', name: 'Transmisor traicionero', player: 'Gaston', ID: 221023},
-    {loot: 0, dungeon: 'Grim Batol', slot: 'Weapon 1', name: 'Martillo salvaje', player: 'Gaston', ID: 133298},
-    {loot: 0, dungeon: 'Craft', slot: 'Weapon 2', name: 'Manndoble cargado', player: 'Gaston', ID: 222447},
+    {loot: 0, type: "dungeon", dungeon: 'Estela Necrótica', slot: 'Head', name: 'Yelmo de escarcha oscura', player: 'Gaston', class: 'Warrior', ID: 178777},
+    {loot: 0, type: "dungeon", dungeon: 'Nieblas de Tirna Scithe', slot: 'Neck', name: 'Llavero de "parada de emergencia"', player: 'Gaston', class: 'Warrior', ID: 221077},
+    {loot: 0, type: "dungeon", dungeon: 'La Petrocámara', slot: 'Cloak', name: 'Manteo yunquepiel', player: 'Gaston', class: 'Warrior', ID: 221088},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Shoulder', name: 'Espaldares astados de escultor de guerra', player: 'Gaston', class: 'Warrior', ID: 211982},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Chest', name: 'Pechera de piel de escultor de guerra', player: 'Gaston', class: 'Warrior', ID: 211987},
+    {loot: 0, type: "craft", dungeon: 'Craft', slot: 'Wrist', name: 'Avambrazos de forja eterna', player: 'Gaston', class: 'Warrior', ID: 222435},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Hands', name: 'Trituradores de escultor de guerra', player: 'Gaston', class: 'Warrior', ID: 211985},
+    {loot: 0, type: "dungeon", dungeon: 'El Rompealbas', slot: 'Belt', name: 'Faja de ardides sombríos', player: 'Gaston', class: 'Warrior', ID: 221133},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Legs', name: 'Quijotes de escultor de guerra', player: 'Gaston', class: 'Warrior', ID: 211983},
+    {loot: 0, type: "dungeon", dungeon: 'Asedio de Boralus', slot: 'Boots', name: 'Botas del baluarte negro', player: 'Gaston', class: 'Warrior', ID: 159428},
+    {loot: 0, type: "raid", dungeon: 'Raid - Reina Ansurek', slot: 'Ring 1', name: 'Sello del pacto envenenado', player: 'Gaston', class: 'Warrior', ID: 225578},
+    {loot: 0, type: "raid", dungeon: "Raid - Tuercelinajes Ovi'nax", slot: 'Ring 2', name: 'Gusanillo avieso', player: 'Gaston', class: 'Warrior', ID: 225576},
+    {loot: 0, type: "dungeon", dungeon: 'Ara-Kara', slot: 'Trinket 1', name: 'Saco eclosionador de Ara-Kara', player: 'Gaston', class: 'Warrior', ID: 219314},
+    {loot: 0, type: "raid", dungeon: "Raid - Princesa del Nexo Ky'veza", slot: 'Trinket 2', name: 'Transmisor traicionero', player: 'Gaston', class: 'Warrior', ID: 221023},
+    {loot: 0, type: "dungeon", dungeon: 'Grim Batol', slot: 'Weapon 1', name: 'Martillo salvaje', player: 'Gaston', class: 'Warrior', ID: 133298},
+    {loot: 0, type: "craft", dungeon: 'Craft', slot: 'Weapon 2', name: 'Manndoble cargado', player: 'Gaston', class: 'Warrior', ID: 222447},
 ];
-// subete cabron
 
 window.onload = function() {
     loadData();
@@ -74,9 +73,9 @@ function clearSections() {
 
 function loadUser(data) {
     const players = {
-        "Nopienso": {color: "warrior", img: "https://render.worldofwarcraft.com/eu/character/sanguino/115/183510643-avatar.jpg?alt=/wow/static/images/2d/avatar/4-0.jpg"},
-        "Mângo": {color: "mage", img: "https://render.worldofwarcraft.com/eu/character/sanguino/172/185198508-avatar.jpg?alt=/wow/static/images/2d/avatar/3-0.jpg"},
-        "Gaston": {color: "warrior", img: "https://render.worldofwarcraft.com/eu/character/sanguino/123/183851131-avatar.jpg?alt=/wow/static/images/2d/avatar/36-0.jpg"},
+        "Nopienso": {color: "warrior-color", img: "https://render.worldofwarcraft.com/eu/character/sanguino/115/183510643-avatar.jpg?alt=/wow/static/images/2d/avatar/4-0.jpg"},
+        "Mângo": {color: "mage-color", img: "https://render.worldofwarcraft.com/eu/character/sanguino/172/185198508-avatar.jpg?alt=/wow/static/images/2d/avatar/3-0.jpg"},
+        "Gaston": {color: "warrior-color", img: "https://render.worldofwarcraft.com/eu/character/sanguino/123/183851131-avatar.jpg?alt=/wow/static/images/2d/avatar/36-0.jpg"},
     };
 
     const userSection = document.getElementById('player-section');
@@ -89,10 +88,10 @@ function loadUser(data) {
 
             const card = document.createElement('div');
             card.classList.add('card', 'mb-4');
-            card.style.backgroundColor = '#1C1C1C';
+            card.classList.add('card-custom-bg');
 
             const header = document.createElement('div');
-            header.classList.add('card-header', players[player].color + '-color');
+            header.classList.add('card-header', players[player].color);
             header.innerHTML = `<img src="${players[player].img}" alt="${player} Avatar" class="avatar-img"><h3>${player}</h3>`;
             card.appendChild(header);
 
@@ -118,7 +117,6 @@ function loadUser(data) {
                 else if (item.dungeon.includes("Craft")) link.style.color = "#007bff";
                 else if (item.dungeon.includes("Tier") || item.dungeon.includes("Catalyst")) link.style.color = "#ff851b";
 
-
                 const spandungeon = document.createElement('span');
                 spandungeon.style.fontStyle = "italic";
                 spandungeon.style.float = "right";
@@ -138,6 +136,7 @@ function loadUser(data) {
     }
 }
 
+
 function loadDungeon(data) {
     const dungeonSection = document.getElementById('dungeon-section');
     const dungeons = {};
@@ -148,7 +147,6 @@ function loadDungeon(data) {
         'Gaston': 'Warrior-F',
     }
 
-    // Agrupar por dungeon y excluir ítems looteados
     data.forEach(item => {
         if (item.loot === 0) {
             const playerClass = playerClases[item.player];
@@ -188,9 +186,10 @@ function loadDungeon(data) {
             link.setAttribute('data-wowhead', `item=${item.ID}`);
             link.textContent = item.name;
 
-            if (item.player.includes("Mângo")) link.style.color = "#3FC7EB";
-            else if (item.player.includes("Nopienso")) link.style.color = "#C69B6D";
-            else if (item.player.includes("Gaston")) link.style.color = "#C69B6D";
+            if (item.class.includes("Mage")) link.classList.add("mage-text-color");
+            else if (item.class.includes("Warrior")) link.classList.add("warrior-text-color");
+            else if (item.class.includes("Paladin")) link.classList.add("paladin-text-color");
+
             li.appendChild(link);
             ul.appendChild(li);
         });
@@ -198,7 +197,6 @@ function loadDungeon(data) {
         colDiv.appendChild(header);
         colDiv.appendChild(ul);
         rowDiv.appendChild(colDiv);
-
     });
 
     if (rowDiv.childElementCount > 0) {
