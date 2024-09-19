@@ -66,7 +66,7 @@ function loadData() {
 
 function clearSections() {
     const userSection = document.getElementById('player-section');
-    const dungeonSection = document.getElementById('dungeon-section');
+    const dungeonSection = document.getElementById('content-section');
     userSection.innerHTML = '';
     dungeonSection.innerHTML = '';
 }
@@ -138,7 +138,7 @@ function loadUser(data) {
 
 
 function loadDungeon(data) {
-    const dungeonSection = document.getElementById('dungeon-section');
+    const dungeonSection = document.getElementById('content-section');
     const dungeons = {};
 
     const playerClases = {
