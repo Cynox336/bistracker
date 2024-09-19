@@ -12,7 +12,7 @@ const data = [
     {loot: 0, type: "dungeon", dungeon: 'Asedio de Boralus', slot: 'Boots', name: 'Botas del baluarte negro', player: 'Nopienso', class: 'Warrior', ID: 159428},
     {loot: 1, type: "raid", dungeon: 'Raid - Reina Ansurek', slot: 'Ring 1', name: 'Sello del pacto envenenado', player: 'Nopienso', class: 'Warrior', ID: 225578},
     {loot: 0, type: "raid", dungeon: "Raid - Tuercelinajes Ovi'nax", slot: 'Ring 2', name: 'Gusanillo avieso', player: 'Nopienso', class: 'Warrior', ID: 225576},
-    {loot: 0, type: "dungeon", dungeon: 'Ara-Kara', slot: 'Trinket 1', name: 'Saco eclosionador de Ara-Kara', player: 'Nopienso', class: 'Warrior', ID: 219314},
+    {loot: 1, type: "dungeon", dungeon: 'Ara-Kara', slot: 'Trinket 1', name: 'Saco eclosionador de Ara-Kara', player: 'Nopienso', class: 'Warrior', ID: 219314},
     {loot: 0, type: "raid", dungeon: "Raid - Princesa del Nexo Ky'veza", slot: 'Trinket 2', name: 'Transmisor traicionero', player: 'Nopienso', class: 'Warrior', ID: 221023},
     {loot: 0, type: "dungeon", dungeon: 'Grim Batol', slot: 'Weapon 1', name: 'Martillo salvaje', player: 'Nopienso', class: 'Warrior', ID: 133298},
     {loot: 0, type: "craft", dungeon: 'Craft', slot: 'Weapon 2', name: 'Manndoble cargado', player: 'Nopienso', class: 'Warrior', ID: 222447},
@@ -52,6 +52,24 @@ const data = [
     {loot: 0, type: "raid", dungeon: "Raid - Princesa del Nexo Ky'veza", slot: 'Trinket 2', name: 'Transmisor traicionero', player: 'Gaston', class: 'Warrior', ID: 221023},
     {loot: 0, type: "dungeon", dungeon: 'Grim Batol', slot: 'Weapon 1', name: 'Martillo salvaje', player: 'Gaston', class: 'Warrior', ID: 133298},
     {loot: 0, type: "craft", dungeon: 'Craft', slot: 'Weapon 2', name: 'Manndoble cargado', player: 'Gaston', class: 'Warrior', ID: 222447},
+
+    //Kortes
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Head', name: 'Borgoñota de serafín sepultado', player: 'Korteza', class: 'Paladin', ID: 211993},
+    {loot: 0, type: "dungeon", dungeon: 'Ciudad Tejida', slot: 'Neck', name: 'Talismán hemolintáfico de anciano', player: 'Korteza', class: 'Paladin', ID: 221181},
+    {loot: 0, type: "dungeon", dungeon: 'Ara-Kara', slot: 'Cloak', name: 'Sudario de clamaenjambres', player: 'Korteza', class: 'Paladin', ID: 221154},
+    {loot: 0, type: "dungeon", dungeon: 'Ciudad Tejida', slot: 'Shoulder', name: 'Cubrehombros de conector de carne', player: 'Korteza', class: 'Paladin', ID: 221185},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Chest', name: 'Coraza de serafín sepultado', player: 'Korteza', class: 'Paladin', ID: 211996},
+    {loot: 0, type: "dungeon", dungeon: 'Ciudad Tejida', slot: 'Wrist', name: 'Brazales de subyugador vociferante', player: 'Korteza', class: 'Paladin', ID: 221167},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Hands', name: 'Escarmiento de serafín sepultado', player: 'Korteza', class: 'Paladin', ID: 211994},
+    {loot: 0, type: "dungeon", dungeon: 'Grim Batol', slot: 'Belt', name: 'Cinturón del maestro de forja', player: 'Korteza', class: 'Paladin', ID: 133289},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Legs', name: 'Grebas de serafín sepultado', player: 'Korteza', class: 'Paladin', ID: 211992},
+    {loot: 0, type: "dungeon", dungeon: 'Ciudad Tejida', slot: 'Boots', name: 'Zapatos herrados manchados de icor', player: 'Korteza', class: 'Paladin', ID: 221178},
+    {loot: 0, type: "dungeon", dungeon: 'Estela Necrótica', slot: 'Ring 1', name: 'Sello extraviado de Cosecarne', player: 'Korteza', class: 'Paladin', ID: 178736},
+    {loot: 0, type: "dungeon", dungeon: "Ciudad Tejida", slot: 'Ring 2', name: 'Sortija del experimento 08752', player: 'Korteza', class: 'Paladin', ID: 221189},
+    {loot: 0, type: "dungeon", dungeon: 'Ara-Kara', slot: 'Trinket 1', name: 'Saco eclosionador de Ara-Kara', player: 'Korteza', class: 'Paladin', ID: 219314},
+    {loot: 0, type: "dungeon", dungeon: "Grim Batol", slot: 'Trinket 2', name: 'Vendaval de sombras', player: 'Korteza', class: 'Paladin', ID: 133304},
+    {loot: 0, type: "dungeon", dungeon: 'Estela Necrótica', slot: 'Weapon 1', name: 'Hoja de hechizo de Amarth', player: 'Korteza', class: 'Paladin', ID: 178737},
+    {loot: 0, type: "dungeon", dungeon: 'Ciudad Tejida', slot: 'Weapon 2', name: 'Hielaman sangre vieja', player: 'Korteza', class: 'Paladin', ID: 221177},
 ];
 
 window.onload = function() {
@@ -76,6 +94,7 @@ function loadUser(data) {
         "Nopienso": {color: "warrior-color", img: "https://render.worldofwarcraft.com/eu/character/sanguino/115/183510643-avatar.jpg?alt=/wow/static/images/2d/avatar/4-0.jpg"},
         "Mângo": {color: "mage-color", img: "https://render.worldofwarcraft.com/eu/character/sanguino/172/185198508-avatar.jpg?alt=/wow/static/images/2d/avatar/3-0.jpg"},
         "Gaston": {color: "warrior-color", img: "https://render.worldofwarcraft.com/eu/character/sanguino/123/183851131-avatar.jpg?alt=/wow/static/images/2d/avatar/36-0.jpg"},
+        "Korteza": {color: "paladin-color", img: "https://render.worldofwarcraft.com/eu/character/sanguino/109/163680109-avatar.jpg?alt=/wow/static/images/2d/avatar/10-1.jpg"},
     };
 
     const userSection = document.getElementById('player-section');
@@ -139,7 +158,7 @@ function loadUser(data) {
 
 function loadDungeon(data) {
     const dungeonSection = document.getElementById('content-section');
-    const dungeons = {};
+    const dungeonsByType = {};
 
     const playerClases = {
         'Nopienso': 'Warrior-F',
@@ -150,56 +169,83 @@ function loadDungeon(data) {
     data.forEach(item => {
         if (item.loot === 0) {
             const playerClass = playerClases[item.player];
+            const type = item.type;
             const dungeon = item.dungeon;
-            if (!dungeons[dungeon]) {
-                dungeons[dungeon] = [];
+
+            if (!dungeonsByType[type]) {
+                dungeonsByType[type] = {};
             }
-            const classHasItem = dungeons[dungeon].some(i => playerClases[i.player] === playerClass && i.name === item.name);
+
+            if (!dungeonsByType[type][dungeon]) {
+                dungeonsByType[type][dungeon] = [];
+            }
+
+            const classHasItem = dungeonsByType[type][dungeon].some(i => playerClases[i.player] === playerClass && i.name === item.name);
 
             if (!classHasItem) {
-                dungeons[dungeon].push(item);
+                dungeonsByType[type][dungeon].push(item);
             }
         }
     });
 
-    const dungeonKeys = Object.keys(dungeons).sort();
+    let typeKeys = Object.keys(dungeonsByType);
+
+    typeKeys = typeKeys.sort((a, b) => {
+        if (a === 'dungeon') return -1;
+        if (b === 'dungeon') return 1;
+        if (a === 'raid') return -1;
+        if (b === 'raid') return 1;
+        if (a === 'tier') return -1;
+        if (b === 'tier') return 1;
+        if (a === 'catalyst') return -1;
+        if (b === 'catalyst') return 1;
+        if (a === 'craft') return -1;
+        if (b === 'craft') return 1;
+        return a.localeCompare(b);
+    });
 
     let rowDiv = document.createElement('div');
     rowDiv.classList.add('row', 'mb-4');
 
-    dungeonKeys.forEach((dungeon, index) => {
-        const colDiv = document.createElement('div');
-        colDiv.classList.add('col-md-3', 'mb-4');
+    typeKeys.forEach(type => {
+        const dungeonKeys = Object.keys(dungeonsByType[type]).sort();
 
-        const header = document.createElement('h4');
-        header.textContent = dungeon;
+        dungeonKeys.forEach(dungeon => {
+            const colDiv = document.createElement('div');
+            colDiv.classList.add('col-md-3', 'mb-4');
 
-        const ul = document.createElement('ul');
-        ul.classList.add('list-group');
+            const header = document.createElement('h4');
+            header.textContent = dungeon;
 
-        dungeons[dungeon].forEach(item => {
-            const li = document.createElement('li');
-            li.classList.add('list-group-item', 'bg-light-dark');
+            const ul = document.createElement('ul');
+            ul.classList.add('list-group');
 
-            const link = document.createElement('a');
-            link.href = `https://www.wowhead.com/item=${item.ID}`;
-            link.setAttribute('data-wowhead', `item=${item.ID}`);
-            link.textContent = item.name;
+            dungeonsByType[type][dungeon].forEach(item => {
+                const li = document.createElement('li');
+                li.classList.add('list-group-item', 'bg-light-dark');
 
-            if (item.class.includes("Mage")) link.classList.add("mage-text-color");
-            else if (item.class.includes("Warrior")) link.classList.add("warrior-text-color");
-            else if (item.class.includes("Paladin")) link.classList.add("paladin-text-color");
+                const link = document.createElement('a');
+                link.href = `https://www.wowhead.com/item=${item.ID}`;
+                link.setAttribute('data-wowhead', `item=${item.ID}`);
+                link.textContent = item.name;
 
-            li.appendChild(link);
-            ul.appendChild(li);
+                if (item.class.includes("Mage")) link.classList.add("mage-text-color");
+                else if (item.class.includes("Warrior")) link.classList.add("warrior-text-color");
+                else if (item.class.includes("Paladin")) link.classList.add("paladin-text-color");
+
+                li.appendChild(link);
+                ul.appendChild(li);
+            });
+
+            colDiv.appendChild(header);
+            colDiv.appendChild(ul);
+            rowDiv.appendChild(colDiv);
         });
-
-        colDiv.appendChild(header);
-        colDiv.appendChild(ul);
-        rowDiv.appendChild(colDiv);
     });
 
     if (rowDiv.childElementCount > 0) {
         dungeonSection.appendChild(rowDiv);
     }
 }
+
+
