@@ -1,9 +1,9 @@
 const data = [
     // Cynox
     {loot: 0, type: "dungeon", dungeon: 'Estela Necrótica', slot: 'Head', name: 'Yelmo de escarcha oscura', player: 'Nopienso', class: 'Warrior', ID: 178777},
-    {loot: 0, type: "dungeon", dungeon: 'Nieblas de Tirna Scithe', slot: 'Neck', name: 'Llavero de "parada de emergencia"', player: 'Nopienso', class: 'Warrior', ID: 221077},
-    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Shoulder', name: 'Espaldares astados de escultor de guerra', player: 'Nopienso', class: 'Warrior', ID: 211982},
+    {loot: 0, type: "dungeon", dungeon: 'La Petrocámara', slot: 'Neck', name: 'Llavero de "parada de emergencia"', player: 'Nopienso', class: 'Warrior', ID: 221077},
     {loot: 0, type: "dungeon", dungeon: 'La Petrocámara', slot: 'Cloak', name: 'Manteo yunquepiel', player: 'Nopienso', class: 'Warrior', ID: 221088},
+    {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Shoulder', name: 'Espaldares astados de escultor de guerra', player: 'Nopienso', class: 'Warrior', ID: 211982},
     {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Chest', name: 'Pechera de piel de escultor de guerra', player: 'Nopienso', class: 'Warrior', ID: 211987},
     {loot: 0, type: "craft", dungeon: 'Craft', slot: 'Wrist', name: 'Avambrazos de forja eterna', player: 'Nopienso', class: 'Warrior', ID: 222435},
     {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Hands', name: 'Trituradores de escultor de guerra', player: 'Nopienso', class: 'Warrior', ID: 211985},
@@ -37,7 +37,7 @@ const data = [
 
     // Katashi
     {loot: 0, type: "dungeon", dungeon: 'Estela Necrótica', slot: 'Head', name: 'Yelmo de escarcha oscura', player: 'Gaston', class: 'Warrior', ID: 178777},
-    {loot: 0, type: "dungeon", dungeon: 'Nieblas de Tirna Scithe', slot: 'Neck', name: 'Llavero de "parada de emergencia"', player: 'Gaston', class: 'Warrior', ID: 221077},
+    {loot: 0, type: "dungeon", dungeon: 'La Petrocámara', slot: 'Neck', name: 'Llavero de "parada de emergencia"', player: 'Gaston', class: 'Warrior', ID: 221077},
     {loot: 0, type: "dungeon", dungeon: 'La Petrocámara', slot: 'Cloak', name: 'Manteo yunquepiel', player: 'Gaston', class: 'Warrior', ID: 221088},
     {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Shoulder', name: 'Espaldares astados de escultor de guerra', player: 'Gaston', class: 'Warrior', ID: 211982},
     {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Chest', name: 'Pechera de piel de escultor de guerra', player: 'Gaston', class: 'Warrior', ID: 211987},
