@@ -19,7 +19,7 @@ const data = [
 
     // Goi
     {loot: 0, type: "dungeon", dungeon: 'Nieblas de Tirna Scithe', slot: 'Head', name: 'Capucha de seda de crisálida', player: 'Mângo', class: 'Mage', ID: 178693},
-    {loot: 0, type: "dungeon", dungeon: 'Raid - Sikran', slot: 'Neck', name: 'Insignia de zelote sureki', player: 'Mângo', class: 'Mage', ID: 225577},
+    {loot: 0, type: "raid", dungeon: 'Raid - Sikran', slot: 'Neck', name: 'Insignia de zelote sureki', player: 'Mângo', class: 'Mage', ID: 225577},
     {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Shoulder', name: 'Balizas de renacer violeta', player: 'Mângo', class: 'Mage', ID: 212090},
     {loot: 0, type: "catalyst", dungeon: 'Catalyst', slot: 'Cloak', name: 'Resguardo de renacer violeta', player: 'Mângo', class: 'Mage', ID: 212087},
     {loot: 0, type: "tier", dungeon: 'Tier', slot: 'Chest', name: 'Abrigo rúnico de renacer violeta', player: 'Mângo', class: 'Mage', ID: 212095},
@@ -71,6 +71,7 @@ const data = [
     {loot: 0, type: "dungeon", dungeon: 'Estela Necrótica', slot: 'Weapon 1', name: 'Hoja de hechizo de Amarth', player: 'Korteza', class: 'Paladin', ID: 178737},
     {loot: 0, type: "dungeon", dungeon: 'Ciudad Tejida', slot: 'Weapon 2', name: 'Hielaman sangre vieja', player: 'Korteza', class: 'Paladin', ID: 221177},
 ];
+
 
 window.onload = function() {
     loadData();
@@ -129,17 +130,17 @@ function loadUser(data) {
                 link.setAttribute('data-wowhead', `item=${item.ID}`);
                 link.textContent = item.name;
 
-                if (item.loot === 1) {
-                    link.style.textDecoration = "line-through";
+                // Aplicar el color de la clase del jugador
+                if (item.class === 'Warrior') {
+                    link.classList.add('warrior-text-color');
+                } else if (item.class === 'Mage') {
+                    link.classList.add('mage-text-color');
+                } else if (item.class === 'Paladin') {
+                    link.classList.add('paladin-text-color');
                 }
-                if (item.dungeon.includes("Raid")) link.style.color = "#a335ee";
-                else if (item.dungeon.includes("Craft")) link.style.color = "#007bff";
-                else if (item.dungeon.includes("Tier") || item.dungeon.includes("Catalyst")) link.style.color = "#ff851b";
 
                 const spandungeon = document.createElement('span');
-                spandungeon.style.fontStyle = "italic";
-                spandungeon.style.float = "right";
-                spandungeon.style.color = "white";
+                spandungeon.classList.add('dungeon-span');
                 spandungeon.textContent = item.dungeon;
 
                 li.appendChild(link);
@@ -155,97 +156,113 @@ function loadUser(data) {
     }
 }
 
-
 function loadDungeon(data) {
     const dungeonSection = document.getElementById('content-section');
-    const dungeonsByType = {};
 
-    const playerClases = {
-        'Nopienso': 'Warrior-F',
-        'Mângo': 'Mage-A',
-        'Gaston': 'Warrior-F',
-    }
+    // Limpiar la sección antes de añadir contenido
+    dungeonSection.innerHTML = ''; 
+
+    // Crear los divs para las categorías, cada uno con su propia fila completa (100% de ancho)
+    const raidDiv = document.createElement('div');
+    raidDiv.classList.add('w-100', 'mb-4'); // Ocupa todo el ancho (una fila completa)
+    raidDiv.innerHTML = "<h3>Raid</h3>";
+
+    const dungeonDiv = document.createElement('div');
+    dungeonDiv.classList.add('w-100', 'mb-4'); // Ocupa todo el ancho (una fila completa)
+    dungeonDiv.innerHTML = "<h3>Dungeon</h3>";
+
+    const othersDiv = document.createElement('div');
+    othersDiv.classList.add('w-100', 'mb-4'); // Ocupa todo el ancho (una fila completa)
+    othersDiv.innerHTML = "<h3>Otros</h3>";
+
+    // Agrupar las mazmorras o raids por su tipo
+    const raids = {};
+    const dungeons = {};
+    const others = {};
 
     data.forEach(item => {
-        if (item.loot === 0) {
-            const playerClass = playerClases[item.player];
-            const type = item.type;
-            const dungeon = item.dungeon;
-
-            if (!dungeonsByType[type]) {
-                dungeonsByType[type] = {};
+        if (item.type === 'raid') {
+            if (!raids[item.dungeon]) {
+                raids[item.dungeon] = [];
             }
-
-            if (!dungeonsByType[type][dungeon]) {
-                dungeonsByType[type][dungeon] = [];
+            raids[item.dungeon].push(item);
+        } else if (item.type === 'dungeon') {
+            if (!dungeons[item.dungeon]) {
+                dungeons[item.dungeon] = [];
             }
-
-            const classHasItem = dungeonsByType[type][dungeon].some(i => playerClases[i.player] === playerClass && i.name === item.name);
-
-            if (!classHasItem) {
-                dungeonsByType[type][dungeon].push(item);
+            dungeons[item.dungeon].push(item);
+        } else {
+            if (!others[item.dungeon]) {
+                others[item.dungeon] = [];
             }
+            others[item.dungeon].push(item);
         }
     });
 
-    let typeKeys = Object.keys(dungeonsByType);
+    // Función para crear la estructura de 2 filas y 4 columnas sin duplicar objetos por clase
+    function createGridSection(dungeonList, divElement) {
+        const row = document.createElement('div');
+        row.classList.add('row'); // Crear fila
 
-    typeKeys = typeKeys.sort((a, b) => {
-        if (a === 'dungeon') return -1;
-        if (b === 'dungeon') return 1;
-        if (a === 'raid') return -1;
-        if (b === 'raid') return 1;
-        if (a === 'tier') return -1;
-        if (b === 'tier') return 1;
-        if (a === 'catalyst') return -1;
-        if (b === 'catalyst') return 1;
-        if (a === 'craft') return -1;
-        if (b === 'craft') return 1;
-        return a.localeCompare(b);
-    });
+        const dungeonNames = Object.keys(dungeonList); // Obtener los nombres únicos de las mazmorras o raids
 
-    let rowDiv = document.createElement('div');
-    rowDiv.classList.add('row', 'mb-4');
-
-    typeKeys.forEach(type => {
-        const dungeonKeys = Object.keys(dungeonsByType[type]).sort();
-
-        dungeonKeys.forEach(dungeon => {
+        dungeonNames.slice(0, 8).forEach((dungeon, index) => {  // Limitar a máximo 8 elementos (2 filas de 4 columnas)
             const colDiv = document.createElement('div');
-            colDiv.classList.add('col-md-3', 'mb-4');
+            colDiv.classList.add('col-md-3', 'mb-2'); // 4 columnas por fila
 
-            const header = document.createElement('h4');
+            const card = document.createElement('div'); 
+            card.classList.add('m-2', 'border-sides'); // Mantener margen y aplicar bordes laterales
+
+            // Añadir el nombre de la mazmorra o raid
+            const header = document.createElement('h5');
             header.textContent = dungeon;
+            card.appendChild(header);
 
-            const ul = document.createElement('ul');
-            ul.classList.add('list-group');
+            // Crear un conjunto para rastrear las clases ya mostradas
+            const displayedClasses = new Set();
 
-            dungeonsByType[type][dungeon].forEach(item => {
-                const li = document.createElement('li');
-                li.classList.add('list-group-item', 'bg-light-dark');
+            // Crear una lista de objetos asociados a la mazmorra o raid sin celdas
+            dungeonList[dungeon].forEach(item => {
+                if (!displayedClasses.has(item.class)) { // Solo mostrar si la clase no ha sido mostrada aún
+                    const itemDiv = document.createElement('div'); // Cambiar a 'div' en lugar de 'li'
+                    itemDiv.classList.add('my-1'); // Añadir solo un margen pequeño
 
-                const link = document.createElement('a');
-                link.href = `https://www.wowhead.com/item=${item.ID}`;
-                link.setAttribute('data-wowhead', `item=${item.ID}`);
-                link.textContent = item.name;
+                    const link = document.createElement('a');
+                    link.href = `https://www.wowhead.com/item=${item.ID}`;
+                    link.setAttribute('data-wowhead', `item=${item.ID}`);
+                    link.textContent = item.name;
 
-                if (item.class.includes("Mage")) link.classList.add("mage-text-color");
-                else if (item.class.includes("Warrior")) link.classList.add("warrior-text-color");
-                else if (item.class.includes("Paladin")) link.classList.add("paladin-text-color");
+                    // Aplicar el color de la clase del jugador
+                    if (item.class === 'Warrior') {
+                        link.classList.add('warrior-text-color');
+                    } else if (item.class === 'Mage') {
+                        link.classList.add('mage-text-color');
+                    } else if (item.class === 'Paladin') {
+                        link.classList.add('paladin-text-color');
+                    }
 
-                li.appendChild(link);
-                ul.appendChild(li);
+                    itemDiv.appendChild(link);
+                    card.appendChild(itemDiv);
+
+                    // Añadir la clase al conjunto para evitar duplicados
+                    displayedClasses.add(item.class);
+                }
             });
 
-            colDiv.appendChild(header);
-            colDiv.appendChild(ul);
-            rowDiv.appendChild(colDiv);
+            colDiv.appendChild(card);
+            row.appendChild(colDiv);
         });
-    });
 
-    if (rowDiv.childElementCount > 0) {
-        dungeonSection.appendChild(rowDiv);
+        divElement.appendChild(row);  // Añadir la fila completa al div correspondiente
     }
+
+    // Añadir las mazmorras o raids con sus objetos en 2 filas y 4 columnas al div de raid
+    createGridSection(raids, raidDiv);
+    createGridSection(dungeons, dungeonDiv);
+    createGridSection(others, othersDiv);
+
+    // Añadir los divs al section principal, uno debajo del otro
+    dungeonSection.appendChild(raidDiv);
+    dungeonSection.appendChild(dungeonDiv);
+    dungeonSection.appendChild(othersDiv);
 }
-
-
