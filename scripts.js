@@ -1,5 +1,5 @@
 import { data } from './data.js';
-import { sql } from "@vercel/postgres";
+/* import { sql } from "@vercel/postgres"; */
 
 /* export default async function Cart({ params }) {
   const { rows } = await sql`SELECT * from CARTS where user_id=${params.user}`;
