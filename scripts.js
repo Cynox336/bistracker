@@ -130,7 +130,6 @@ function loadUser(data) {
                 link.setAttribute('data-wowhead', `item=${item.ID}`);
                 link.textContent = item.name;
 
-                // Aplicar el color de la clase del jugador
                 if (item.class === 'Warrior') {
                     link.classList.add('warrior-text-color');
                 } else if (item.class === 'Mage') {
@@ -199,7 +198,7 @@ function loadDungeon(data) {
         }
     });
 
-    // Función para crear la estructura de 2 filas y 4 columnas sin duplicar objetos por clase
+    // Función para crear la estructura de 2 filas y 4 columnas sin duplicar objetos por clase e ID
     function createGridSection(dungeonList, divElement) {
         const row = document.createElement('div');
         row.classList.add('row'); // Crear fila
@@ -218,34 +217,38 @@ function loadDungeon(data) {
             header.textContent = dungeon;
             card.appendChild(header);
 
-            // Crear un conjunto para rastrear las clases ya mostradas
-            const displayedClasses = new Set();
+            // Crear un conjunto para rastrear las combinaciones de clase e ID ya mostradas
+            const displayedItems = new Set();
 
-            // Crear una lista de objetos asociados a la mazmorra o raid sin celdas
+            // Crear una lista de objetos asociados a la mazmorra o raid, aplicando el color de la clase del personaje
             dungeonList[dungeon].forEach(item => {
-                if (!displayedClasses.has(item.class)) { // Solo mostrar si la clase no ha sido mostrada aún
-                    const itemDiv = document.createElement('div'); // Cambiar a 'div' en lugar de 'li'
-                    itemDiv.classList.add('my-1'); // Añadir solo un margen pequeño
+                const uniqueKey = `${item.class}-${item.ID}`; // Crear una clave única usando clase y ID
+
+                if (!displayedItems.has(uniqueKey)) { // Solo mostrar si la clase y el ID no han sido mostrados
+                    const itemDiv = document.createElement('div'); 
+                    itemDiv.classList.add('my-1'); 
 
                     const link = document.createElement('a');
                     link.href = `https://www.wowhead.com/item=${item.ID}`;
                     link.setAttribute('data-wowhead', `item=${item.ID}`);
                     link.textContent = item.name;
 
-                    // Aplicar el color de la clase del jugador
+                    // Asignar el color de la clase del personaje en las secciones de Raid/Dungeon/Otros
                     if (item.class === 'Warrior') {
                         link.classList.add('warrior-text-color');
                     } else if (item.class === 'Mage') {
                         link.classList.add('mage-text-color');
                     } else if (item.class === 'Paladin') {
                         link.classList.add('paladin-text-color');
+                    } else if (item.class === 'Druid') {
+                        link.classList.add('druid-text-color');
                     }
 
                     itemDiv.appendChild(link);
                     card.appendChild(itemDiv);
 
-                    // Añadir la clase al conjunto para evitar duplicados
-                    displayedClasses.add(item.class);
+                    // Añadir la combinación de clase e ID al conjunto para evitar duplicados
+                    displayedItems.add(uniqueKey);
                 }
             });
 
@@ -266,3 +269,69 @@ function loadDungeon(data) {
     dungeonSection.appendChild(dungeonDiv);
     dungeonSection.appendChild(othersDiv);
 }
+
+function loadUser(data) {
+    const players = {
+        "Nopienso": {color: "warrior-color", img: "https://render.worldofwarcraft.com/eu/character/sanguino/115/183510643-avatar.jpg?alt=/wow/static/images/2d/avatar/4-0.jpg"},
+        "Mângo": {color: "mage-color", img: "https://render.worldofwarcraft.com/eu/character/sanguino/172/185198508-avatar.jpg?alt=/wow/static/images/2d/avatar/3-0.jpg"},
+        "Gaston": {color: "warrior-color", img: "https://render.worldofwarcraft.com/eu/character/sanguino/123/183851131-avatar.jpg?alt=/wow/static/images/2d/avatar/36-0.jpg"},
+        "Korteza": {color: "paladin-color", img: "https://render.worldofwarcraft.com/eu/character/sanguino/109/163680109-avatar.jpg?alt=/wow/static/images/2d/avatar/10-1.jpg"},
+    };
+
+    const userSection = document.getElementById('player-section');
+
+    for (const player in players) {
+        const itemsplayer = data.filter(item => item.player.includes(player));
+        if (itemsplayer.length > 0) {
+            const cardDiv = document.createElement('div');
+            cardDiv.classList.add('col-md-6');
+
+            const card = document.createElement('div');
+            card.classList.add('card', 'mb-4');
+            card.classList.add('card-custom-bg');
+
+            const header = document.createElement('div');
+            header.classList.add('card-header', players[player].color);
+            header.innerHTML = `<img src="${players[player].img}" alt="${player} Avatar" class="avatar-img"><h3>${player}</h3>`;
+            card.appendChild(header);
+
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+
+            const ul = document.createElement('ul');
+            ul.classList.add('list-group');
+
+            itemsplayer.forEach(item => {
+                const li = document.createElement('li');
+                li.classList.add('list-group-item', 'bg-light-dark');
+
+                const link = document.createElement('a');
+                link.href = `https://www.wowhead.com/item=${item.ID}`;
+                link.setAttribute('data-wowhead', `item=${item.ID}`);
+                link.textContent = item.name;
+
+                // Asignar el color según el tipo de objeto (en los divs de los personajes)
+                if (item.type === 'raid') {
+                    link.classList.add('link-raid'); // Clase para objetos de tipo raid
+                } else if (item.type === 'dungeon') {
+                    link.classList.add('link-dungeon'); // Clase para objetos de tipo dungeon
+                } else if (item.type === 'tier') {
+                    link.classList.add('link-tier-catalyst'); // Clase para objetos de tipo tier o catalyst
+                } else if (item.type === 'craft') {
+                    link.classList.add('link-craft'); // Clase para objetos de tipo craft (color rojo oscuro)
+                } else {
+                    link.classList.add('link-otros'); // Clase para otros tipos
+                }
+
+                li.appendChild(link);
+                ul.appendChild(li);
+            });
+
+            cardBody.appendChild(ul);
+            card.appendChild(cardBody);
+            cardDiv.appendChild(card);
+            userSection.appendChild(cardDiv);
+        }
+    }
+}
+
