@@ -31,7 +31,7 @@
 .mage-color {
     background-color: #3FC7EB !important;
 }
-.paladin-color{
+.paladin-color {
     background-color: #F48CBA !important;
 }
 input[type="checkbox"] {
@@ -67,14 +67,17 @@ input[type="checkbox"]:checked {
 .card-custom-bg {
     background-color: #1C1C1C;
 }
+.link-dungeon {
+    color: #51EA5A !important;
+}
 .link-raid {
-    color: #a335ee;
+    color: #a335ee !important;
 }
 .link-craft {
-    color: #007bff;
+    color: #c90404 !important;
 }
 .link-tier-catalyst {
-    color: #ff851b;
+    color: #ff851b !important;
 }
 .mage-text-color {
     color: #3FC7EB;
@@ -93,11 +96,11 @@ input[type="checkbox"]:checked {
 .border-sides {
     border: 2px solid black !important;
     padding: 10px;
-    background-color: #1C1C1C; /* Mantener el fondo oscuro */
+    background-color: #1C1C1C;
 }
 h1 {
     color: yellowgreen;
 }
-.link-craft {
-    color: #c90404;
+.tachado {
+    text-decoration: line-through;
 }
